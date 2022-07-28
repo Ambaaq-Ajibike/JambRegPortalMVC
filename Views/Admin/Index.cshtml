@@ -1,0 +1,59 @@
+@model IEnumerable<JambRegistrationMVC.Dtos.AdminDto>
+    <div>
+        <table  class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Admin Id
+                    </th>
+                    <th>
+                       FullName
+                    </th>
+                    <th>
+                        Address
+                    </th>
+                    <th>
+                        Gender
+                    </th> 
+                    <th>
+                        Profile
+                    </th>
+                    <th>
+                        Remove
+                    </th>                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var admin in Model)
+                {
+                    <tr>
+                            <th>                        
+                            @admin.AdminId
+                        </th>
+                        <th>
+                            @admin.FullName
+                            </th>
+                        <th>
+                            @admin.Address
+                            </th>
+                        <th>
+                            @admin.Gender
+                        </th>
+                        <th>
+                            <a asp-action= "GetAdmin" asp-route-id="@admin.Id" class = "btn btn-success">Detail</a>
+                        </th>
+                        
+                        <th>
+                            <a asp-action= "Delete" asp-route-id="@admin.Id" class = "btn btn-danger">Delete</a>
+                        </th>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <a asp-action="CreateAdmin" class="btn btn-primary">Register New Admin</a>
+        <a asp-controller="Center" asp-action="Index" class="btn btn-primary">Centers</a> <a asp-controller="Course" asp-action="Index" class="btn btn-primary">Courses</a> <a asp-controller="School" asp-action="Index" class="btn btn-primary">Schools</a>
+        <a asp-controller="Subject" asp-action="Index" class="btn btn-primary">Subjects</a>
+        <a asp-controller="Student" asp-action="Index" class="btn btn-primary">Students</a>
+    </div>    

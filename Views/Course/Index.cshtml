@@ -1,0 +1,56 @@
+@* @model IEnumerable<JambRegistrationMVC.Dtos.AdminDto> *@
+    <div>
+        <table  class="table">
+            <thead>
+                <tr>
+                    <th>
+                         Id
+                    </th>
+                    <th>
+                       Name
+                    </th>
+                    <th>
+                       List Of Schools
+                    </th>
+                    <th>
+                       About
+                    </th>
+                    <th>
+                        Edit Profile
+                    </th> 
+                    <th>
+                        Remove
+                    </th>                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var course in Model)
+                {
+                    <tr>
+                        <th>                        
+                            @course.Id
+                        </th>
+                        <th>
+                            @course.Name
+                            </th>
+                            <th>
+                                <a asp-action="GetSchoolsByCourseId"  asp-route-courseid="@course.Id"class = "btn btn-danger">Schools Offering this course</a>
+                             </th>
+                        <th>
+                            <a asp-action= "GetCourse" asp-route-id="@course.Id" class = "btn btn-success">Detail</a>
+                        </th>
+                        <th>
+                            <a asp-action= "UpdateCourse" asp-route-id="@course.Id" class = "btn btn-primary">Edit</a>
+                        </th>
+                        <th>
+                            <a asp-action= "Delete" asp-route-id="@course.Id" class = "btn btn-danger">Delete</a>
+                        </th>
+                        
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <a asp-action="CreateCourse" class="btn btn-primary">Add New Course</a>
+    </div>    

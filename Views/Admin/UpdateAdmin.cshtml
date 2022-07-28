@@ -1,0 +1,31 @@
+@* @model JambRegistrationMVC.Dtos.AdminsRequestModel  *@
+<div>
+    <form asp-action="UpdateAdmin">
+        <div>
+            <label>First Name</label>
+            <input type="text" name="FirstName"/>
+        </div>
+        <div>
+            <label>Last Name</label>
+            <input type="text" name="LastName"/>
+        </div>
+        <div>
+            <label>Address</label>
+            <input type="text" name="Address"/>
+        </div>
+        <div>
+            <label>Email</label>
+            <input type="email" name="Email"/>
+        </div>
+        <div>
+            <label>Password</label>
+            <input type="password" name="PassWord"/>
+        </div>
+      <div>
+            <input type="submit" style="color: azure" value = "UpdateAdmin" class="btn btn-success" required/>
+        </div>        
+        </form>
+        <div>
+            <a asp-action = "Index">Back</a>
+        </div>
+</div>        

@@ -1,0 +1,17 @@
+@model JambRegistrationMVC.Dtos.SchoolResponseModel
+<div>
+    <dl>
+        <dd>
+            Name :
+        </dd>
+            @Model.Data.Name
+        <dd>
+            Address :
+        </dd>
+            @Model.Data.Address
+        @* <dt>
+            <a asp-controller="Course"  asp-action="GetCoursesBySchoolId"  asp-route-id="@Model.Data.Id">Courses Offered by this school</a>
+        </dt> *@
+    </dl>
+</div>
+<a asp-action = "Index">Back</a>

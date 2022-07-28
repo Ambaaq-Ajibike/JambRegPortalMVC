@@ -1,0 +1,49 @@
+@* @model IEnumerable<JambRegistrationMVC.Dtos.AdminDto> *@
+    <div>
+        <table  class="table">
+            <thead>
+                <tr>
+                    <th>
+                         Id
+                    </th>
+                    <th>
+                       Name
+                    </th>
+                    <th>
+                       About
+                    </th>
+                    <th>
+                        Edit Profile
+                    </th> 
+                    <th>
+                        Remove
+                    </th>                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var admin in Model)
+                {
+                    <tr>
+                        <th>                        
+                            @admin.Id
+                        </th>
+                        <th>
+                            @admin.Name
+                            </th>
+                        <th>
+                            <a asp-action= "GetSubject" asp-route-id="@admin.Id" class = "btn btn-success">Detail</a>
+                        </th>
+                        <th>
+                            <a asp-action= "UpdateSubject" asp-route-id="@admin.Id" class = "btn btn-primary">Edit</a>
+                        </th>
+                        <th>
+                            <a asp-action= "Delete" asp-route-id="@admin.Id" class = "btn btn-danger">Delete</a>
+                        </th>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <a asp-action="CreateSubject" class="btn btn-primary">Add New Subject</a>
+    </div>    

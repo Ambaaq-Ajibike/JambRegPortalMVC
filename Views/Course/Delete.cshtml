@@ -1,0 +1,16 @@
+@* @model JambRegistrationMVC.Dtos.AdminResponseModel *@
+<div>
+        <dl>
+        <dd>
+            Name :
+        </dd>
+        <dt>
+            @Model.Data.Name
+        </dt>
+    </dl>
+    <span>Are you sure you want to delete?</span>
+    <form asp-action="Delete" >
+        <input type="submit"  value = "Delete" class="btn btn-danger" required/>
+    </form>
+    <a asp-action = "Index">Back</a>
+</div>

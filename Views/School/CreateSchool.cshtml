@@ -1,0 +1,17 @@
+@model JambRegistrationMVC.Dtos.SchoolRequestModel
+<form asp-action = "CreateSchool">
+    <div>
+        <label>Name</label>
+        <input type="text" name = "Name" required/>
+         <label >Address</label>
+        <input type="text" name = "Address" required/>
+    </div>
+    <div>
+            <label>Courses</label>
+            <select asp-for="CourseIds" asp-items="ViewBag.Courses" multiple>
+                <option selected disabled>Select Course</option>
+            </select>
+    </div>
+        <input type="submit" value="Add" class = "btn btn-primary" required/>
+    </div>
+</form>

@@ -1,0 +1,28 @@
+@model JambRegistrationMVC.Dtos.CenterResponseModel
+<div>
+        <dl>
+        <dd>
+            Name :
+        </dd>
+        <dt>
+            @Model.Data.Name
+        </dt>
+        <dd>
+            Address :
+        </dd>
+        <dt>
+            @Model.Data.Address
+        </dt>
+        <dd>
+            Capacity :
+        </dd>
+        <dt>
+            @Model.Data.Capacity
+        </dt>
+    </dl>
+    <span>Are you sure you want to remove this center?</span>
+        <form asp-action="Delete" >
+        <input type="submit"  value = "Delete" class="btn btn-danger" required/>
+        </form>
+    <a asp-action = "Index">Back</a>
+</div>

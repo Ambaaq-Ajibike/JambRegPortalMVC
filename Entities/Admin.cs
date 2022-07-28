@@ -1,0 +1,17 @@
+using System;
+using JambRegistrationMVC.Identity;
+using JambRegistrationMVC.Contract;
+namespace JambRegistrationMVC.Entities
+{
+    public class Admin : AuditableEntity
+    {
+        public int Id{get; set; }
+        public string FirstName{get; set;}
+        public string LastName{get; set;}
+        public string Address{get; set;}
+        public Gender Gender{get; set;}
+        public string AdminId{get; set;}
+        public int UserId{get; set;}
+        public User User{get; set;}
+    }    
+}

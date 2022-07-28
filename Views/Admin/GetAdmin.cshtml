@@ -1,0 +1,37 @@
+@model JambRegistrationMVC.Dtos.AdminResponseModel
+<div>
+    <dl>
+        <dd>
+            Admin Id :
+        </dd>
+        <dt>
+            @Model.Data.AdminId
+        </dt>
+        <dd>
+            Name :
+        </dd>
+        <dt>
+            @Model.Data.FullName
+        </dt>
+        <dd>
+            Address :
+        </dd>
+        <dt>
+            @Model.Data.Address
+        </dt>
+        <dd>
+            Email :
+        </dd>
+        <dt>
+            @Model.Data.Email
+        </dt>
+        <dd>
+            Gender :
+        </dd>
+        <dt>
+            @Model.Data.Gender
+        </dt>    
+    </dl>
+        <a asp-controller="Center" asp-action="Index" class="btn btn-primary">Centers</a> <a asp-controller="Course" asp-action="Index" class="btn btn-primary">Courses</a> <a asp-controller="School" asp-action="Index" class="btn btn-primary">Schools</a>
+        <a asp-controller="Subject" asp-action="Index" class="btn btn-primary">Subjects</a>
+</div>

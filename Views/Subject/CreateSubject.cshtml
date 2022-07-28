@@ -1,0 +1,15 @@
+@* @using JambRegistrationMVC *@
+<form asp-action = "CreateSubject">
+    @if(!string.IsNullOrEmpty(ViewBag.Message))
+    {
+        <p class="alert alertwarning alert dismissible" role="alert">@ViewBag.Message</p>
+    }
+    <div>
+      
+        <label>Name</label>
+        <input type="text" name = "Name" required/>
+    </div>
+    <div>
+        <input type="submit" value="Add" class = "btn btn-primary" required/>
+    </div>
+</form>

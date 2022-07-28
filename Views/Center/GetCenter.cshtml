@@ -1,0 +1,18 @@
+@model JambRegistrationMVC.Dtos.CenterResponseModel
+<div>
+    <dl>
+        <dd>
+            Name :
+        </dd>
+            @Model.Data.Name
+        <dd>
+            Address :
+        </dd>
+            @Model.Data.Address
+        <dd>
+            Capacity :
+        </dd>
+            @Model.Data.Capacity
+    </dl>
+</div>
+<a asp-action = "Index">Back</a>

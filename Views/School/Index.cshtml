@@ -1,0 +1,60 @@
+@model IEnumerable<JambRegistrationMVC.Dtos.SchoolDto>
+    <div>
+        <table  class="table">
+            <thead>
+                <tr>
+                    <th>
+                        S/N
+                    </th>
+                    <th>
+                       Name
+                    </th>
+                     <th>
+                        Courses
+                    </th>  
+                    <th>
+                        About
+                    </th>  
+                    <th>
+                        Update
+                    </th> 
+                    <th>
+                        Remove
+                    </th>                                      
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var school in Model)
+                {
+                    <tr>
+                            <th>                        
+                            @school.Id
+                        </th>
+                        <th>
+                            @school.Name
+                            </th>
+                            
+                        <th>
+                            <a asp-action= "GetCoursesBySchoolId" asp-route-schoolid="@school.Id" class = "btn btn-danger">Course Offered by this school</a>
+                        </th>
+                        <th>
+                            <a asp-action= "GetSchool" asp-route-id="@school.Id" class = "btn btn-success">Details</a>
+                        </th>
+                        <th>
+                            <a asp-action= "UpdateSchool" asp-route-id="@school.Id" class = "btn btn-primary">Update</a>
+                        </th>
+                        <th>
+                            <a asp-action= "Delete" asp-route-id="@school.Id" class = "btn btn-danger">Delete</a>
+                        </th>
+                        <th>
+                            <a asp-action= "AddNewCourseToSchool" asp-route-id="@school.Id"></a>
+                        </th>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <a asp-action="CreateSchool" class="btn btn-primary">Add New School</a>
+        
+    </div>    

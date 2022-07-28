@@ -1,0 +1,49 @@
+@model IEnumerable<JambRegistrationMVC.Dtos.CenterDto>
+    <div>
+        <table  class="table">
+            <thead>
+                <tr>
+                    <th>
+                        S/N
+                    </th>
+                    <th>
+                       Name
+                    </th>
+                    <th>
+                        About
+                    </th>  
+                    <th>
+                        Update
+                    </th> 
+                    <th>
+                        Remove
+                    </th>                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var center in Model)
+                {
+                    <tr>
+                            <th>                        
+                            @center.Id
+                        </th>
+                        <th>
+                            @center.Name
+                            </th>
+                        <th>
+                            <a asp-action= "GetCenter" asp-route-id="@center.Id" class = "btn btn-success">Details</a>
+                        </th>
+                        <th>
+                            <a asp-action= "UpdateCenter" asp-route-id="@center.Id" class = "btn btn-primary">Update</a>
+                        </th>
+                        <th>
+                            <a asp-action= "Delete" asp-route-id="@center.Id" class = "btn btn-danger">Delete</a>
+                        </th>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <a asp-action="CreateCenter" class="btn btn-primary">Register New Center</a>
+    </div>    

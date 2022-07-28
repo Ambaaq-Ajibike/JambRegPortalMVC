@@ -1,0 +1,28 @@
+@model IEnumerable<JambRegistrationMVC.Dtos.SchoolDto>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                     S/N
+                </th>
+                 <th>
+                    School Name
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var school in Model)
+            {
+                <tr>
+                    <th>
+                        @school.Id
+                    </th>
+                    <th>
+                        @school.Name
+                    </th>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

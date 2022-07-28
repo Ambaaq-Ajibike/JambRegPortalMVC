@@ -1,0 +1,37 @@
+@model IEnumerable<JambRegistrationMVC.Dtos.CourseDto>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                     S/N
+                </th>
+                 <th>
+                    Course Name
+                </th>
+                 <th>
+                    Delete Course
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var course in Model)
+            {
+                <tr>
+                    <th>
+                        @course.Id
+                    </th>
+                    <th>
+                        @course.Name
+                    </th>
+                    <th>
+                            <a asp-action= "DeleteCourseFromSchool" asp-route-schoolCourseid="@course.Id" class = "btn btn-danger">Delete</a>
+                    </th>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div>
+        <a asp-route-id="@ViewBag.Id" asp-action="AddNewCourseToSchool" class="btn btn-primary">Add New Course</a>
+    </div>  

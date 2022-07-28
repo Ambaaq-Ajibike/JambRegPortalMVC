@@ -1,0 +1,61 @@
+@model IEnumerable<JambRegistrationMVC.Dtos.StudentDto>
+    <div>
+        <table  class="table">
+            <thead>
+                <tr>
+                    <th>
+                        S/N
+                    </th>
+                    <th>
+                       FullName
+                    </th>
+                    <th>
+                        Address
+                    </th>
+                    <th>
+                        Gender
+                    </th> 
+                    <th>
+                        Profile
+                    </th>  
+                    <th>
+                        Image
+                    </th> 
+                    @* <th>
+                        Remove
+                    </th>                     *@
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var student in Model)
+                {
+                    <tr>
+                            <th>                        
+                            @student.Id
+                        </th>
+                        <th>
+                            @student.FullName
+                            </th>
+                        <th>
+                            @student.Address
+                            </th>
+                        <th>
+                            @student.Gender
+                        </th>
+                        <th>
+                            <a asp-action= "GetStudent" asp-route-id="@student.Id" class = "btn btn-success">Detail</a>
+                        </th>
+                         <th>
+                            <img class="card-img" style="width: 100px; height: 100px;" src="~/Images/@student.StudentImage">
+                        </th>
+                        @* <th>
+                            <a asp-action= "Delete" asp-route-id="@admin.Id" class = "btn btn-danger">Delete</a>
+                        </th> *@
+                    </tr> 
+                }
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <a asp-action="CreateStudent" class="btn btn-primary">Register</a>
+    </div>    

@@ -1,0 +1,14 @@
+@model JambRegistrationMVC.Dtos.SchoolRequestModel
+<div>
+    <form asp-action="AddNewCourseToSchool">
+         <div>
+            <label>Courses</label>
+            <select asp-for="CourseIds" asp-items="ViewBag.Courses" multiple>
+                <option selected disabled>Select Course</option>
+            </select>
+    <div>      
+        </form>
+        <div>
+            <a asp-action = "GetCoursesBySchoolId">Exit</a>
+        </div>
+</div>            
